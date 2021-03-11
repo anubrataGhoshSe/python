@@ -1,0 +1,554 @@
+{
+	"info": {
+		"_postman_id": "64273573-3f85-4058-ac06-13669f4381bf",
+		"name": "Python API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "welcome script",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get ALL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/countries",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get BY single path variable",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/countries/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"countries",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getRequestQueryParams?ids=1,2&name=anub,bubai",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/getRequestQueryParams?ids=1,2&name=anub,bubai",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"getRequestQueryParams"
+					],
+					"query": [
+						{
+							"key": "ids",
+							"value": "1,2"
+						},
+						{
+							"key": "name",
+							"value": "anub,bubai"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getRequestQueryParams?ids=1,2&name=anub,bubai",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/getRequestQueryParams?ids=1,2&name=anub,bubai",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"getRequestQueryParams"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "1,2"
+								},
+								{
+									"key": "name",
+									"value": "anub,bubai"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "51"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.5"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 10 Mar 2021 09:18:56 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"reqIds\": \"1,2\",\n    \"reqNames\": \"anub,bubai\"\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/getCountryByIds?ids=1,2,3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/getCountryByIds?ids=1,2,3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"getCountryByIds"
+					],
+					"query": [
+						{
+							"key": "ids",
+							"value": "1,2,3"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:5000/getCountryByIds?ids=1,2,3",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/getCountryByIds?ids=1,2,3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"getCountryByIds"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "1,2,3"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "180"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.5"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 10 Mar 2021 09:19:56 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"countries_by_id\": [\n        {\n            \"id\": 1,\n            \"name\": \"INDIA\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"UK\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"USA\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/sendPayload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ids\":[1,2,3],\r\n    \"desc\":\"This is a new country\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/sendPayload",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"sendPayload"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:5000/sendPayload",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ids\":[1,2,3],\r\n    \"desc\":\"This is a new country\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/sendPayload",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"sendPayload"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "108"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.5"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 10 Mar 2021 09:36:25 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"payload\": {\n        \"desc\": \"This is a new country\",\n        \"ids\": [\n            1,\n            2,\n            3\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/updateJsonById",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ids\":[1,2],\r\n    \"desc\":\"I am the boss country\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/updateJsonById",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"updateJsonById"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/insertCountry",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"description\": \"I am the hero of the country\",\r\n            \"name\": \"INDIA\"\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/insertCountry",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"insertCountry"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:5000/insertCountry",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"description\": \"I am the hero of the country\",\r\n            \"name\": \"RASIA\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/insertCountry",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"insertCountry"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1448"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.5"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 10 Mar 2021 14:14:37 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[{\"_id\": {\"$oid\": \"6048ce99038074750b0cf30a\"}, \"description\": \"I am the hero of the country\", \"name\": \"INDIA\"}, {\"_id\": {\"$oid\": \"6048ce9c038074750b0cf30b\"}, \"description\": \"I am the hero of the country\", \"name\": \"INDIA\"}, {\"_id\": {\"$oid\": \"6048ce9d038074750b0cf30c\"}, \"description\": \"I am the hero of the country\", \"name\": \"INDIA\"}, {\"_id\": {\"$oid\": \"6048ce9d038074750b0cf30d\"}, \"description\": \"I am the hero of the country\", \"name\": \"INDIA\"}, {\"_id\": {\"$oid\": \"6048ce9f038074750b0cf30e\"}, \"description\": \"I am the hero of the country\", \"name\": \"INDIA\"}, {\"_id\": {\"$oid\": \"6048d047aeb6777ba684e7f6\"}, \"description\": \"I am the hero of the country\", \"name\": \"INDIA\"}, {\"_id\": {\"$oid\": \"6048d051aeb6777ba684e7f7\"}, \"description\": \"I am the hero of the country\", \"name\": \"USA\"}, {\"_id\": {\"$oid\": \"6048d056aeb6777ba684e7f8\"}, \"description\": \"I am the hero of the country\", \"name\": \"canada\"}, {\"_id\": {\"$oid\": \"6048d0fc9f4d2d1b63d2aad9\"}, \"description\": \"I am the hero of the country\", \"name\": \"Newzeland\"}, {\"_id\": {\"$oid\": \"6048d1039f4d2d1b63d2aada\"}, \"description\": \"I am the hero of the country\", \"name\": \"AUS\"}, {\"_id\": {\"$oid\": \"6048d1089f4d2d1b63d2aadb\"}, \"description\": \"I am the hero of the country\", \"name\": \"JAPAN\"}, {\"_id\": {\"$oid\": \"6048d382c5f8858f37bc4775\"}, \"description\": \"I am the hero of the country\", \"name\": \"indonasia\"}, {\"_id\": {\"$oid\": \"6048d44ddace9c26e004b2fb\"}, \"description\": \"I am the hero of the country\", \"name\": \"RASIA\"}]"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/getAllCountry",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/getAllCountry",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"getAllCountry"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/updateCountry",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\":\"6049bfe915c9634f3fec90ab\",\r\n    \"data\":{\r\n        \"description\": \"This is india\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/updateCountry",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"updateCountry"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/delCountry/<id>",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/delCountry/6049bfe915c9634f3fec90ab",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"delCountry",
+						"6049bfe915c9634f3fec90ab"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:5000/delCountry/<id>",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/delCountry/6049bfe915c9634f3fec90ab",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"delCountry",
+								"6049bfe915c9634f3fec90ab"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "220"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.5"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 11 Mar 2021 08:23:33 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[{\"_id\": {\"$oid\": \"6049c00115c9634f3fec90ac\"}, \"description\": \"I am the hero of the country\", \"name\": \"INDIA\"}, {\"_id\": {\"$oid\": \"6049c00815c9634f3fec90ad\"}, \"description\": \"I am the hero of the country\", \"name\": \"USA\"}]"
+				}
+			]
+		}
+	]
+}

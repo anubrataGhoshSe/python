@@ -18,5 +18,9 @@ def updateCountry(payload):
     return obj
 
 
+def deleteCountry(_id):
+    return Repository.deleteOne("country", _id)
+
+
 def findAll(collection):
     return Repository.findAll(collection)

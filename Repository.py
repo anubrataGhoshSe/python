@@ -1,5 +1,6 @@
 from Connection import Connection
 from bson.json_util import dumps
+from bson.objectid import ObjectId
 
 
 def createOne(collection, obj):
@@ -32,3 +33,12 @@ def findAll(collection):
     list_cur = list(cursor)
     json_dumps = dumps(list_cur)
     return json_dumps
+
+
+def deleteOne(collection, _id):
+    conn = Connection()
+    mycol = conn.mydb[collection]
+    mycol.delete_one({"_id": ObjectId(_id)})
+    obj = mycol.find()
+    _json = dumps(list(obj))
+    return _json

@@ -97,5 +97,10 @@ def getAllCountry():
     return Service.findAll("country")
 
 
+@app.route('/delCountry/<id>', methods=['POST', 'DELETE'])
+def delCountry(id):
+    return Service.deleteCountry(str(id))
+
+
 if __name__ == "__main__":
     app.run(debug=True)

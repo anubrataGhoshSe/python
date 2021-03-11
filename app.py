@@ -80,10 +80,21 @@ def updateJsonById():
 @app.route('/insertCountry', methods=['POST'])
 def insertCountry():
     payload = request.json
-    print("create country payload: ", payload)
-    obj = Service.createcountry(payload)
+    print("update country payload: ", payload)
+    obj = Service.createCountry(payload)
     print("obj: ", obj)
     return obj
+
+
+@app.route("/updateCountry", methods=['POST'])
+def updateCountry():
+    obj = Service.updateCountry(request.json)
+    return obj
+
+
+@app.route("/getAllCountry", methods=['GET'])
+def getAllCountry():
+    return Service.findAll("country")
 
 
 if __name__ == "__main__":

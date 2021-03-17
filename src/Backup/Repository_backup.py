@@ -1,4 +1,4 @@
-from Connection import Connection
+from src.Connection import Connection
 from bson.json_util import dumps
 from bson.objectid import ObjectId
 

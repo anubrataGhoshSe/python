@@ -1,6 +1,5 @@
-from flask import Flask, jsonify, request, json
-import Repository
-import Service
+from flask import Flask, jsonify, request, render_template
+from src import Service
 
 app = Flask(__name__)
 
@@ -11,7 +10,9 @@ countries = [{'id': 1, 'name': "INDIA"},
 
 @app.route('/')
 def index():
-    return "Welcome to firstAPI"
+    #return "welcome"
+    return render_template("index.html")
+
 
 
 @app.route( '/countries', methods=['GET'])
